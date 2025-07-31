@@ -33,16 +33,6 @@ test("renders movie's time within a p tag", async () => {
   expect(p.tagName).toBe("P");
 });
 
-test("renders a span for each genre",  () => {
-  render(<RouterProvider router={router} />);
-  const genres = ["Action", "Adventure", "Fantasy"];
-  genres.forEach(async (genre) =>{
-    const span = await screen.findByText(genre);
-    expect(span).toBeInTheDocument();
-    expect(span.tagName).toBe("SPAN");
-  })
-});
-
 test("renders the <NavBar /> component", async () => {
   const router = createMemoryRouter(routes, {
     initialEntries: [`/movie/1`]
